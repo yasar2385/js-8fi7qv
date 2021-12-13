@@ -1,0 +1,63 @@
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#test').html('<em>It works!</em>');
+      $('#test em').css({ color: '#0c0' });
+      var count = $('#count');
+      $({ Counter: 0 }).animate(
+        { Counter: count.text() },
+        {
+          duration: 5000,
+          easing: 'linear',
+          step: function () {
+            count.text(Math.ceil(this.Counter) + '%');
+          },
+        }
+      );
+    });
+  </script>
+</head>
+<body>
+  <h1>Test</h1>
+  <p id="test"><strong style="color: #f00">It does not work</strong></p>
+  <div id="app"></div>
+  <div id="TEST">TESTTESTTESTTESTTESTTEST</div>
+  <div id="ONE">TESTTESTTESTTESTTESTTEST</div>
+  <div id="TWO">TESTTESTTESTTESTTESTTEST</div>
+  <!-- <div class="loader"></div> -->
+  <svg id="animated" viewbox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="#FDB900" />
+    <path
+      fill="none"
+      stroke-linecap="round"
+      stroke-width="5"
+      stroke="#fff"
+      stroke-dasharray="251.2,0"
+      d="M50 10
+           a 40 40 0 0 1 0 80
+           a 40 40 0 0 1 0 -80"
+    >
+      <animate
+        attributeName="stroke-dasharray"
+        from="0,251.2"
+        to="251.2,0"
+        dur="15s"
+      />
+    </path>
+    <text id="count" x="50" y="50" text-anchor="middle" dy="7" font-size="20">
+      100%
+    </text>
+  </svg>
+
+  <div class="container">
+    <div class="circular-progress">
+      <div class="value-container">0%</div>
+    </div>
+  </div>
+</body>
