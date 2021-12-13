@@ -144,13 +144,15 @@ $({ Counter: 0 }).animate(
   }
 );
 
-let porgressBar = document.querySelector('.circular-progress');
+let prgressBar = document.querySelector('.circular-progress');
 let valueConatainer = document.querySelector('.value-container');
 let progressValue = 0;
 let progressEndValue = 65;
-let speed = 50000;
-// let progress = setInterval(() => {
-//   progressValue++;
-//   valueConatainer.textContent = `${progressValue}`;
-//   pr;
-// }, speed);
+let speed = 500000;
+let progress = setInterval(() => {
+  progressValue++;
+  valueConatainer.textContent = `${progressValue}`;
+  prgressBar.style.background = `conic-gradient(
+    #4d5bf9
+  )`;
+}, speed);
