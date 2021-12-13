@@ -153,6 +153,10 @@ let progress = setInterval(() => {
   progressValue++;
   valueConatainer.textContent = `${progressValue}`;
   prgressBar.style.background = `conic-gradient(
-    #4d5bf9
+    #4d5bf9 ${progressValue * 3.6}deg,
+    #cadcff ${progressValue * 3.6}deg
   )`;
+  if (progressValue == progressEndValue) {
+    clearInterval(progress);
+  }
 }, speed);
