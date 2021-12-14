@@ -61,6 +61,8 @@ svg {
   width: 250px;
   background-color: orange;
   border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
 .circular-progress:before {
   content: "";

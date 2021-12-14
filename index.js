@@ -70,6 +70,13 @@ var EQ_ORDER = {
   },
   2: 'M1',
   3: MATH_ATTR.func,
+  4: function () {
+    console.log('eee');
+  },
+  5: (String.prototype.lastValue = function () {}),
+  6: (String.prototype.lastChar = function () {
+    console.log('eee');
+  }),
 };
 
 console.log(typeof EQ_ORDER[3] == 'function');
