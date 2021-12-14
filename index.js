@@ -74,15 +74,15 @@ var EQ_ORDER = {
     console.log('eee');
   },
   5: (String.prototype.lastValue = function () {}),
-  6: (String.prototype.lastChar = function () {
+  6: (String.prototype.lastChar = function (ths) {
     try {
-      return this.charAt(0);
+      return ths.charAt(0); //this&&this.charAt(0)||
     } catch (err) {
       console.warn(err.message);
     }
   }),
 };
-console.log(EQ_ORDER);
+console.log(EQ_ORDER[6]);
 
 console.log(typeof EQ_ORDER[3] == 'function');
 
