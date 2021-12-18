@@ -82,6 +82,10 @@ var EQ_ORDER = {
     }
   }),
 };
+var index = Data.map(function (e) {
+  return e.name;
+}).indexOf('Nick');
+
 console.log(EQ_ORDER[6]);
 
 console.log(typeof EQ_ORDER[3] == 'function');
@@ -143,6 +147,9 @@ var trackDialog = {
     },
   },
 };
+var index = trackDialog.trackInfoMessages.IsEq.Info.map(function (e) {
+  return e.name;
+}).indexOf('Nick');
 
 var count = $('#count');
 $({ Counter: 0 }).animate(
